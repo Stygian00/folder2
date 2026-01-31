@@ -11,7 +11,7 @@ def classify_email(email_text, llm):
 Analyze the following customer email and return ONLY a single JSON object (not an array/list) with exactly these keys:
 - "priority": must be "urgent", "normal", or "low"
 - "sentiment": must be "positive", "neutral", or "negative"
-- "suggested_send_time": "2 hours from now" for urgent, "next business day" for low, "same day" for normal
+- "suggested_send_time": "4 hours from now" for urgent, "next business day" for low, "same day" for normal
 
 Email:
 {email_text}
