@@ -1,6 +1,6 @@
 
 
-import os
+import ospython -m venv venv
 import json
 import requests
 
@@ -36,6 +36,7 @@ def process_email(email_path):
     with open(email_path, 'r') as f:
         email_text = f.read()
     # 1. Classify
+
     classification = classify_email(email_text, ollama_llm)
     # 2. Retrieve context (RAG)
     kb_context = retrieve_context(email_text, n_results=2)

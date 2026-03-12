@@ -1,0 +1,5 @@
+Company Policy: All customer complaints must be acknowledged within 24 hours.
+ Unresolved issues should be escalated to a supervisor after 48 hours.
+
+Support Policy: Our support team is available Monday to Friday, 9am-6pm. 
+Response time for urgent issues is within 2 hours during business hours.

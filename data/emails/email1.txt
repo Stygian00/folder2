@@ -1,0 +1,9 @@
+Subject: Unable to access my account
+From: customer1@example.com
+
+Hello,
+
+I am unable to log into my account since yesterday. It says my password is incorrect, but I am sure I am entering the right one. Can you please help me regain access?
+
+Thank you,
+John Doe

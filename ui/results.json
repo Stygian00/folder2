@@ -1,0 +1,24 @@
+[
+  {
+    "email": "Subject: Unable to access my account\nFrom: customer1@example.com\n\nHello,\n\nI am unable to log into my account since yesterday. It says my password is incorrect, but I am sure I am entering the right one. Can you please help me regain access?\n\nThank you,\nJohn Doe",
+    "classification": {
+      "priority": "urgent",
+      "sentiment": "positive",
+      "suggested_send_time": "2 hours from now"
+    },
+    "response": "[\n    {\n        \"type\": \"entry\",\n        \"author\": {\n            \"name\": \"Customer Service\",\n            \"url\": \"https://www.example.com\"\n        },\n        \"date\": \"Mon, 29 Jan 2021 18:30:59 +0000\",\n        \"p:response\": {\n            \"type\": \"assistant_answer\",\n            \"text\": \"I apologize for any inconvenience. Our support team has been unable to access your account due to an issue with your password. Please enter your username and a valid password to gain access to your account. If you're experiencing difficulties, please provide as much information as possible about the account and its usage history. We are working on resolving this issue as quickly as possible and will get back to you as soon as possible. In the meantime, please feel free to reach out to our support team for further assistance.\"\n        }\n    },\n    {\n        \"type\": \"comment\",\n        \"text\": \"",
+    "confidence": 0.85,
+    "needs_review": false
+  },
+  {
+    "email": "Subject: Interested in your product pricing\nFrom: customer2@example.com\n\nHi,\n\nwhere is my order .orderno. 12345\nbest regards,\nJane Smith",
+    "classification": {
+      "priority": "urgent",
+      "sentiment": "positive",
+      "suggested_send_time": "next business day"
+    },
+    "response": "To generate the following KB context for the provided email:\n\n```json\n{\n    \"query\": \"Subject: Interested in your product prizing\",\n    \"response\": {\n        \"customer_id\": \"12345\",\n        \"order_id\": \"12345\",\n        \"email\": \"customer2@example.com\",\n        \"ip_address\": \"127.0.0.1\",\n        \"timestamp\": \"2021-01-01T00:00:00Z\",\n        \"system\": \"Customer Support\",\n        \"assistant\": {\n            \"confidence\": 1,\n            \"response\": [\n                {\n                    \"question\": \"Where is my order?\",\n                    \"answer\": \"Best regards, Jane Smith\"\n                },\n                {\n                    \"question\": \"Can you please confirm the product pricing for the order #12345?\",\n                    \"answer\": \"I do not have access to your specific order details or information. However, based on past customer requests and history, I can assume that the product pricing for this order is $20.\"\n                }\n            ]\n        }\n    }\n}\n```\n\nThe generated KB context includes:\n\n- \"customer_id\": \"12345\" - The unique ID assigned to the customer during their previous interaction with our support team.\n- \"order_id\": \"12345\" - The unique identifier of their order within our system, which should be visible on their account page.\n- \"email\": \"customer2@example.com\" - The email address of the customer who submitted the original email.\n- \"ip_address\": \"127.0.0.1\" - The IP address of the customer's device from which they submitted the email.\n- \"timestamp\": \"2021-01-01T00:00:00Z\" - The date and time when the customer originally submitted their email, which will help in assigning a confidence score to the response.\n- \"system\": \"Customer Support\" - The name of our customer support service.\n- \"assistant\": {\n    \"confidence\": 1,\n    \"response\": [\n        {\n            \"question\": \"Where is my order?\",\n            \"answer\": \"Best regards, Jane Smith\"\n        },\n        {\n            \"question\": \"Can you please confirm the product pricing for the order #12345?\",\n            \"answer\": \"I do not have access to your specific order details or information. However, based on past customer requests and history, I can assume that the product pricing for this order is $20.\"\n        }\n    ]\n}\n\nThe generated KB context includes a question-answer pair for \"Where is my order?\" along with an answer that meets or exceeds the customer's expectations. This ensures that the response can provide value to the customer and aligns with their expectations.",
+    "confidence": 0.85,
+    "needs_review": false
+  }
+]

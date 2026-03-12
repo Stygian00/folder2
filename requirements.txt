@@ -1,0 +1,5 @@
+langchain
+chromadb
+streamlit
+requests
+python-dotenv
