@@ -1,6 +1,8 @@
 # Drafting Agent
 # Uses LLM + RAG to draft responses
+import logging
 
+logger = logging.getLogger(__name__)
 def draft_response(email_text, kb_results, llm):
     """
     Drafts a personalized response using LLM and RAG context.
@@ -14,6 +16,7 @@ def draft_response(email_text, kb_results, llm):
     Also, provide a confidence score (0-1) for how well the response addresses the email, as JSON: {{'response': ..., 'confidence': ...}}
     """
     import json as pyjson
+    logger.debug(f"LLM raw response: {result}")
     result = llm(prompt)
     try:
         parsed = pyjson.loads(result)
