@@ -1,7 +1,11 @@
 # Email Classifier Agent
 # Uses LLM to classify emails by urgency/sentiment and suggest schedule
 # path: C:\Users\anusha\Downloads\assignmentfolder\folder2\agents\classifier_agent.py
+import json as pyjson
+import re
+import logging
 
+lgg = logging.getLogger(__name__)
 def classify_email(email_text, llm):
     """
     Classifies email urgency and sentiment using LLM.
@@ -22,7 +26,7 @@ Respond with ONLY the JSON object, no additional text:
     import re
     
     result = llm(prompt)
-    
+    lgg.debug(f"Raw LLM response: {result}")
     # Default fallback
     default = {'priority': 'normal', 'sentiment': 'neutral', 'suggested_send_time': 'same day'}
     
@@ -43,6 +47,7 @@ Respond with ONLY the JSON object, no additional text:
                         'sentiment': item.get('sentiment', 'neutral'),
                         'suggested_send_time': item.get('suggested_send_time', 'same day')
                     }
+            
             return default
         
         # Handle dict response - ensure all keys exist
@@ -52,10 +57,10 @@ Respond with ONLY the JSON object, no additional text:
                 'sentiment': parsed.get('sentiment', 'neutral'),
                 'suggested_send_time': parsed.get('suggested_send_time', 'same day')
             }
-        
+        lgg.info(f"Email classified: priority={classified['priority']}, sentiment={classified['sentiment']}")      
         return default
         
     except Exception as e:
-        print(f"Classification parsing error: {e}")
-        print(f"Raw LLM response: {result}")
+        lgg.error(f"Classification parsing error: {e}")
+        lgg.error(f"Raw LLM response: {result}")
         return default

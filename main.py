@@ -12,6 +12,13 @@ from rag.chromadb_setup import retrieve_context
 
 from langchain_community.llms import Ollama
 
+import logging
+
+logging.basicConfig(
+    filename='app.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
 # Initialize Ollama LLM
 llm = Ollama(model='tinyllama')
 
